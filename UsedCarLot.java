@@ -27,13 +27,21 @@ public class UsedCarLot
 }
 
     public Car addCar(int p, String m, String carType, int ng, boolean cc){
-     
+         if (p <= 0){
+             System.out.println("Price below 0, setting to 1");
+             p=1;
+         }
          if (carType.equals("Auto")){
              Car c=(Car) new AutoTransCar(p,m, false);
              totalValue+=c.getPrice();
              return c;
             }
-            if (carType.equals("Manual")) {
+         if (carType.equals("Manual")) {
+              if ((ng < 3) || (ng > 6))
+              {
+                  System.out.println("NumGears outside valid range, setting to 3");
+                  ng = 3;
+              }
               Car c= (Car) new ManualTransCar(p,m, ng);
               totalValue+=c.getPrice();  
               return c;
