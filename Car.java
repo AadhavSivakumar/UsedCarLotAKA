@@ -3,6 +3,7 @@ public abstract class Car{
 private int price;
 private String model;
 private int vin;
+private int year;
 
 public Car(){
   price=0;
@@ -20,12 +21,17 @@ public void setVin(int Vin){
 public void setPrice(int p){
   price=p;
 }
-
+public void setYear(int y){
+  year = y;
+}
 public int getPrice(){
   return  price;
 }
 public int getVin(){
   return vin;
+}
+public int getYear(){
+  return year;
 }
 public void setModel(String m){
   model=m;
