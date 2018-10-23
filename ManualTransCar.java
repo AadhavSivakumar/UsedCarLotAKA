@@ -6,8 +6,8 @@ public ManualTransCar(){
   setNumGears(5);
 }
 
-public  ManualTransCar( int p,String m, int  ng){
-   super(p,m);
+public  ManualTransCar( int p,String m, int ng, String vin, int year){
+   super(p,m,vin,year);
    setNumGears(5);
 }
 
@@ -25,5 +25,10 @@ public void setNumGears(int ng){
 public int getNumGears(){
   return numGears;
 }
-
+@Override
+public String toString()
+{
+    return super.toString() + "Type: Manual" + "\n" + "Gears: " + numGears + "\n";
+    
+}
 }
